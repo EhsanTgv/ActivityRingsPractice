@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var percentage1: Double = 0
+    
     var body: some View {
         ZStack{
             Ring(
-                lineWidth: 50,
+                lineWidth: 40,
                 backgroundColor: Color.blue.opacity(0.2),
                 foregroundColor: Color.blue,
-                percentage: 50
+                percentage: percentage1
             )
             .frame(width: 300, height: 300)
+            .onTapGesture {
+                self.percentage1 = 100
+            }
         }
     }
 }
